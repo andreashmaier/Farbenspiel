@@ -12,8 +12,16 @@ public class Fenster extends JFrame {
         super("Farbenspiel");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.initComponents();
+        this.initEvents();
         this.setSize(300, 300);
         this.setVisible(true);
+    }
+
+    private void initEvents() {
+        MeinActionListener mal = new MeinActionListener(jPanel);
+        jbtnRot.addActionListener(mal);
+        jbtnGelb.addActionListener(mal);
+        jbtnBlau.addActionListener(mal);
     }
 
 
