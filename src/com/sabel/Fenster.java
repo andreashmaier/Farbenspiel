@@ -1,11 +1,8 @@
 package com.sabel;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class Fenster extends JFrame implements ActionListener {
+public class Fenster extends JFrame {
     private JPanel jPanel;
     private JButton jbtnRot;
     private JButton jbtnGelb;
@@ -15,16 +12,10 @@ public class Fenster extends JFrame implements ActionListener {
         super("Farbenspiel");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.initComponents();
-        this.initEvents();
         this.setSize(300, 300);
         this.setVisible(true);
     }
 
-    private void initEvents() {
-        jbtnRot.addActionListener(this);
-        jbtnBlau.addActionListener(this);
-        jbtnGelb.addActionListener(this);
-    }
 
     private void initComponents() {
         jPanel = new JPanel();
@@ -41,20 +32,5 @@ public class Fenster extends JFrame implements ActionListener {
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
-        switch (e.getActionCommand()) {
-            case "Rot":
-                jPanel.setBackground(Color.RED);
-                break;
-            case "Gelb":
-                jPanel.setBackground(Color.YELLOW);
-                break;
-            case "Blau":
-                jPanel.setBackground(Color.BLUE);
-                break;
-        }
-
-    }
 }
